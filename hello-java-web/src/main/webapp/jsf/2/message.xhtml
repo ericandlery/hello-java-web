@@ -10,13 +10,14 @@
 <body>
 	<h1>Test JSF Custom Message</h1>
 	<h:form>
-		<h:inputText required="true" requiredMessage="Please Enter This Message."/><br/>
+		<h:inputText value="#{navigationBean.name}" required="true" requiredMessage="Please Enter This Message."/><br/>
 		<h:outputLabel for="test2" value="Custom"/>
-		<h:inputText id="test2" required="true" requiredMessage="Please Enter This Message.">
+		<h:inputText value="#{navigationBean.action}" id="test2" required="true" requiredMessage="Please Enter This Message.">
 			<c:validateLength for="test2" maximum="3" minimum="2"/>
 		</h:inputText>
 		<h:message for="test2" style="color:green;font-size:xx-large"/><br/>
-		<h:commandButton value="OK"/>
+		<h:commandButton value="OK" action="#{navigationBean.view}"/><br/>
+		<h:commandButton value="Redirect" action="/jsf/2/nav?faces-redirect=true"/>
 	</h:form>
 </body>
 </html>
