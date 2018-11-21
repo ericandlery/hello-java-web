@@ -8,6 +8,7 @@
 </head>
 <body>
 	<h1>UI Component</h1>
+	<hr />
 	<h:form>
 	<h:panelGrid columns="3">
 	<h:outputLabel for="cname">Car Name:</h:outputLabel>
@@ -17,5 +18,17 @@
 	<h:inputText id="color" value="#{car.color}"></h:inputText>
 	</h:panelGrid>
 	</h:form>
+	<hr />
+	<h:form>
+		<h:outputLabel for="mname">My Car Name:</h:outputLabel>
+		<h:inputText id="mname" value="#{labelCar.name}"/><br/>
+		<h:outputLabel for="mteam">My Car Team:</h:outputLabel>
+		<h:inputText id="mteam" value="#{labelCar.team}"/><br/>
+		<h:outputLabel for="mrpm">My Car RPM:</h:outputLabel>
+		<h:inputText id="mrpm" value="#{labelCar.rpm}"/>
+	</h:form>
+	<hr />
+	<h1>Image</h1>
+	<h:graphicImage value="img/500px-Wave.svg.png"/>
 </body>
 </html>
