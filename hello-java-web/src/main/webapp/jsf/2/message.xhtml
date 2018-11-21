@@ -6,6 +6,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>JSF Custom Messages</title>
+<script>
+	window.onload=function(){
+// 		alert();
+	}
+</script>
 </head>
 <body>
 	<h1>Test JSF Custom Message</h1>
@@ -18,6 +23,16 @@
 		<h:message for="test2" style="color:green;font-size:xx-large"/><br/>
 		<h:commandButton value="OK" action="#{navigationBean.view}"/><br/>
 		<h:commandButton value="Redirect" action="/jsf/2/nav?faces-redirect=true"/>
+	</h:form>
+	<hr />
+	<h:form>
+		<h:commandButton value="choice 1" action="#{navigationBean.choice}">
+			<c:param name="param" value="379"/>
+		</h:commandButton><br/>
+		<h:commandButton value="choice 2" action="#{navigationBean.choice}">
+			<c:param name="param" value="986"/>
+			<c:param name="param2" value="34234"/>
+		</h:commandButton>
 	</h:form>
 </body>
 </html>
