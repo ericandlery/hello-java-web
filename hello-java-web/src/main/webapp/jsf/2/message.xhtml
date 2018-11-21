@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jsf/core">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>JSF Custom Messages</title>
+</head>
+<body>
+	<h1>Test JSF Custom Message</h1>
+	<h:form>
+		<h:inputText required="true" requiredMessage="Please Enter This Message."/><br/>
+		<h:outputLabel for="test2" value="Custom"/>
+		<h:inputText id="test2" required="true" requiredMessage="Please Enter This Message.">
+			<c:validateLength for="test2" maximum="3" minimum="2"/>
+		</h:inputText>
+		<h:message for="test2" style="color:green;font-size:xx-large"/><br/>
+		<h:commandButton value="OK"/>
+	</h:form>
+</body>
+</html>
