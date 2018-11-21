@@ -25,10 +25,11 @@
 		<h:outputLabel for="mteam">My Car Team:</h:outputLabel>
 		<h:inputText id="mteam" value="#{labelCar.team}"/><br/>
 		<h:outputLabel for="mrpm">My Car RPM:</h:outputLabel>
-		<h:inputText id="mrpm" value="#{labelCar.rpm}"/>
+		<h:inputText id="mrpm" value="#{labelCar.rpm}"/><br/>
+		<h:commandButton id="submit" action="car_info" value="submit"/>
 	</h:form>
 	<hr />
 	<h1>Image</h1>
-	<h:graphicImage value="img/500px-Wave.svg.png"/>
+	<h:graphicImage value="img/500px-Wave.svg.png" height="50" width="50"/>
 </body>
 </html>

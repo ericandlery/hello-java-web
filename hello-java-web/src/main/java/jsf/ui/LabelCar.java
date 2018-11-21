@@ -7,7 +7,7 @@ import javax.faces.bean.SessionScoped;
 @SessionScoped
 public class LabelCar {
 	
-	private String name="kimi";
+	private String name;
 	private String team;
 	private Integer rpm;
 	
