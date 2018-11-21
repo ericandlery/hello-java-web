@@ -26,10 +26,18 @@
 		<h:inputText id="mteam" value="#{labelCar.team}"/><br/>
 		<h:outputLabel for="mrpm">My Car RPM:</h:outputLabel>
 		<h:inputText id="mrpm" value="#{labelCar.rpm}"/><br/>
-		<h:commandButton id="submit" action="car_info" value="submit"/>
+		<h:inputSecret id="pw" value="#{labelCar.password}"/>
+		<h:commandButton id="submit" action="car_info" value="Submit"/>
 	</h:form>
 	<hr />
 	<h1>Image</h1>
 	<h:graphicImage value="img/500px-Wave.svg.png" height="50" width="50"/>
+	<hr />
+	<h:form>
+		ID: <h:inputText value="#{loginJSF.id}"/>
+		PW: <h:inputText value="#{loginJSF.pw}"/><br/>
+		Comment: <h:inputTextarea/><br/>
+		<h:commandButton value="Login" action="#{loginJSF.validate}"/>
+	</h:form>
 </body>
 </html>

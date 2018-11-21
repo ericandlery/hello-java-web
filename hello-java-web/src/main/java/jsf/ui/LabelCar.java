@@ -10,6 +10,7 @@ public class LabelCar {
 	private String name;
 	private String team;
 	private Integer rpm;
+	private String password;
 	
 	public String getName() {
 		return name;
@@ -28,6 +29,12 @@ public class LabelCar {
 	}
 	public void setRpm(Integer rpm) {
 		this.rpm = rpm;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 }
