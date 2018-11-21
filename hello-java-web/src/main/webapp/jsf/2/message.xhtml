@@ -9,15 +9,16 @@
 <script>
 	window.onload=function(){
 // 		alert();
+// 		alert(document.getElementById('xxx').textContent);
 	}
 </script>
 </head>
 <body>
-	<h1>Test JSF Custom Message</h1>
+	<h1 id="xxx">Test JSF Custom Message</h1>
 	<h:form>
-		<h:inputText value="#{navigationBean.name}" required="true" requiredMessage="Please Enter This Message."/><br/>
+		<h:inputText id="xxx" value="#{navigationBean.name}" required="true" requiredMessage="Please Enter This Message."/><br/>
 		<h:outputLabel for="test2" value="Custom"/>
-		<h:inputText value="#{navigationBean.action}" id="test2" required="true" requiredMessage="Please Enter This Message.">
+		<h:inputText value="#{navigationBean.action}" id="test2" required="true" requiredMessage="Please Enter This Message." style="color:blue;">
 			<c:validateLength for="test2" maximum="3" minimum="2"/>
 		</h:inputText>
 		<h:message for="test2" style="color:green;font-size:xx-large"/><br/>
@@ -30,7 +31,7 @@
 			<c:param name="param" value="379"/>
 		</h:commandButton><br/>
 		<h:commandButton value="choice 2" action="#{navigationBean.choice}">
-			<c:param name="param" value="986"/>
+			<c:param  id="param" name="param" value="986"/>
 			<c:param name="param2" value="34234"/>
 		</h:commandButton>
 	</h:form>
