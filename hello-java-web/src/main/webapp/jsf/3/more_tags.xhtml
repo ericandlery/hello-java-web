@@ -25,5 +25,14 @@
 			<c:facet name="header">RPM</c:facet>#{lis.rpm}
 		</h:column>
 	</h:dataTable>
+	<hr />
+	<h:form>
+		<h:outputLabel>Select a Team</h:outputLabel><br/>
+		<h:selectManyListbox value="#{formulaTeamBean.list}">
+			<c:selectItem itemValue="Imola" itemLabel="Imola"/>
+			<c:selectItem itemValue="Interlagos" itemLabel="Interlagos"/>
+			<c:selectItem itemValue="Indy" itemLabel="Indy"/>
+		</h:selectManyListbox>
+	</h:form>
 </body>
 </html>
