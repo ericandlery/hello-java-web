@@ -5,9 +5,25 @@
 	xmlns:c="http://java.sun.com/jsf/core">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Insert title here</title>
+<title>DataTable Tag Test</title>
 </head>
 <body>
-	<h:dataTable></h:dataTable>
+	<h:dataTable value="#{formulaTeamBean.tableBean}" var="lis" border="5" cellspacing="5" cellpadding="5">
+		<h:column>
+			<c:facet name="header">Name</c:facet>#{lis.name}
+		</h:column>
+		<h:column>
+			<c:facet name="header">Location</c:facet>#{lis.location}
+		</h:column>
+		<h:column>
+			<c:facet name="header">Year</c:facet>#{lis.year}
+		</h:column>
+		<h:column>
+			<c:facet name="header">Date</c:facet>#{lis.date}
+		</h:column>
+		<h:column>
+			<c:facet name="header">RPM</c:facet>#{lis.rpm}
+		</h:column>
+	</h:dataTable>
 </body>
 </html>
