@@ -6,6 +6,26 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>DataTable Tag Test</title>
+<script>
+//<![CDATA[
+	function select(e){
+		var value=e.id
+// 		alert(value);
+		var v=document.getElementById('j_idt24:select').value;
+// 		alert(v);
+	}
+	
+	function resetAll(e){
+		e.preventDefault();
+		var v=document.getElementById('form:select').selectedOptions;
+		for(var i=0;i<=v.length;i++){
+// 			alert(v[i].selected);
+// 			v[i].removeAttribute('selected');
+		}
+		v=null;
+	}
+//]]>
+</script>
 </head>
 <body>
 	<h:dataTable value="#{formulaTeamBean.tableBean}" var="lis" border="5" cellspacing="5" cellpadding="5">
@@ -26,13 +46,26 @@
 		</h:column>
 	</h:dataTable>
 	<hr />
-	<h:form>
+	<h:dataTable value="#{formulaTeamBean.map}" var="map" style="color:red;" border="1" cellpadding="1" cellspacing="1">
+		<h:column>
+			<c:facet name="header">Name</c:facet>#{map.silver}
+		</h:column>
+	</h:dataTable>
+	<hr />
+	<h:form id="form">
 		<h:outputLabel>Select a Team</h:outputLabel><br/>
-		<h:selectManyListbox value="#{formulaTeamBean.list}">
-			<c:selectItem itemValue="Imola" itemLabel="Imola"/>
-			<c:selectItem itemValue="Interlagos" itemLabel="Interlagos"/>
-			<c:selectItem itemValue="Indy" itemLabel="Indy"/>
+		<h:selectManyListbox value="#{selectBean.list}" onchange="select(this)" id="select">
+			<c:selectItem itemValue="marino" itemLabel="Imola"/>
+			<c:selectItem itemValue="brazil" itemLabel="Interlagos"/>
+			<c:selectItem itemValue="us" itemLabel="Indy"/>
 		</h:selectManyListbox>
+		<h:commandButton value="OK" action="more_tags"/>
+<!-- 		<h:commandButton value="OK" action="result.jsp"/> -->
+<!-- 		<h:commandButton value="OK" action="result2.jsp"/> -->
+<!-- 		<h:commandButton value="OK" action="result3.jsp"/> -->
+		<h:commandButton value="Reset" type="reset" onclick="resetAll(this)"/>
 	</h:form>
+	<hr />
+	<h:panelGroup rendered="#{not empty selectBean.list}">#{selectBean.list}</h:panelGroup>
 </body>
 </html>

@@ -3,7 +3,9 @@ package jsf.tag;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.faces.bean.ManagedBean;
 
@@ -79,6 +81,14 @@ public class FormulaTeamBean {
 				new FormulaTeamBean("pastor","Troll",2012,new Date(),18000),
 				new FormulaTeamBean("alonso","Enstone",2005,new Date(),18800)
 		);
+	}
+	
+	public Map getMap() {
+		Map<String,String> map=new HashMap<>();
+		map.put("red","Ferrari");
+		map.put("silver","McLaren");
+		map.put("blue","Williams");
+		return map;
 	}
 
 }
