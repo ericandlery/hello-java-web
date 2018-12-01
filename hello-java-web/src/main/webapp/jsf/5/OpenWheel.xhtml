@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>JSF Event Listener</title>
+<script>
+	window.onload=function(){
+		var select=document.getElementById('form2:team');
+// 		alert(select.options[0].selected);
+	}
+</script>
+</head>
+<body>
+	<h1>JSF Event Listner</h1>
+	<h:form>
+		<h:panelGrid bgcolor="green">
+			<h:outputLabel for="name" title="Name">Name:</h:outputLabel>
+			<h:inputText id="name" value="#{openWheelListener.name}" valueChangeListener="#{openWheelListener.onChange}"/><br/>
+			<h:commandButton value="OK" actionListener="#{openWheelListener.processAction}"/>
+<!-- 			<h:commandButton value="OK" actionListener="#{opwheel.processAction}"/> -->
+		</h:panelGrid>
+	</h:form>
+	<hr />
+	<h1>#{openWheelListener.name}</h1>
+	<h:form id="form2">
+		<h:panelGrid bgcolor="cyan">
+			<h:selectOneMenu id="team" value="#{openWheelListener.team}" valueChangeListener="#{openWheelListener.onChange}" onchange="submit()">
+				<f:selectItem itemLabel="Select a Item" noSelectionOption="true"/>
+				<f:selectItem itemValue="McLaren" itemLabel="McLaren"/>
+				<f:selectItem itemValue="Williams" itemLabel="Williams"/>
+				<f:selectItem itemValue="Jordan" itemLabel="Jordan"/>
+				<f:selectItem itemValue="Arrows" itemLabel="Arrows"/>
+			</h:selectOneMenu>
+			<h:commandButton value="OK" action="OpenWheel"/>
+		</h:panelGrid>
+	</h:form>
+	<hr />
+	<span>#{openWheelListener.team}</span>
+</body>
+</html>

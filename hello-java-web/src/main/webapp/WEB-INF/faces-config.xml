@@ -6,6 +6,12 @@
     http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd"
     version="2.0">
     
+<!--     <managed-bean> -->
+<!--     	<managed-bean-name>opwheel</managed-bean-name> -->
+<!--     	<managed-bean-class>listener.OpenWheelListener</managed-bean-class> -->
+<!--     	<managed-bean-scope>request</managed-bean-scope> -->
+<!--     </managed-bean> -->
+    
      <application>
      	<message-bundle>jsf.resourcebundle</message-bundle>
      </application>
