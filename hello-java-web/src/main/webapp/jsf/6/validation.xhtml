@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>JSF Validation Test</title>
+<style>
+	#test{visibility: visible;}
+</style>
+<script>
+//<![CDATA[
+	window.onload=function(){
+		var h2=document.getElementsByTagName('h2');
+		var sName=document.getElementById('sName').textContent;
+// 		alert(h2[0].textContent);
+// 		alert(sName);
+		if(sName!=null && sName!='' && sName.trim().length!=0){
+// 			alert(h2[0].textContent);
+// 			alert(h2[0].style);
+// 			alert(h2[0].style.visibility);
+			h2[0].style.visibility='visible';
+		}
+	}
+//]]>
+</script>
+</head>
+<body>
+	<h1>JSF Validation Test</h1>
+	<h:form>
+		<h:panelGrid columns="3" cellpadding="5" cellspacing="5" bgcolor="gray">
+			<h:column>
+				<h:outputLabel for="name" value="Name: " title="Name" style="color:white;"/>
+				<h:inputText id="name" value="#{v.name}" required="true" requiredMessage="輸入名字！" validator="#{v.validate}" label="name"/>
+			</h:column>
+			<h:column>
+				<h:outputLabel for="pw" value="Password: " title="Password"/>
+				<h:inputText id="pw" required="true" requiredMessage="This is encrypted!" validator="#{v.validate}" label="pw"/>
+			</h:column>
+			<br/>
+			<h:commandButton value="Reset" type="reset"/>
+			<h:commandButton value="OK" type="submit" action="validation"/>
+		</h:panelGrid>
+	</h:form>
+	<hr />
+	<h2 style="visibility:hidden;">Hello #{v.name}!</h2>
+	<div>
+		<span id="sName" style="visibility: hidden;">#{v.name}</span>
+<!--  		<span id="sPw">#{v.pw}</span> -->
+	</div>
+</body>
+</html>
