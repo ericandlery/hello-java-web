@@ -16,5 +16,7 @@
 	<hr>
 	<h3>Model and View Test</h3>
 	<a href="golf.sp">mav</a>
+	<hr>
+	<a href="redirect.sp">Redirect</a>
 </body>
 </html>
