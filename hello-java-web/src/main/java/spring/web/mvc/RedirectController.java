@@ -9,7 +9,7 @@ public class RedirectController {
 	
 	@RequestMapping(value="/spring_mvc/redirect")
 	public String index() {
-		return "redirect:redirect.jsp";
+		return "redirect:redirect";
 	}
 	
 	@RequestMapping(value="",method=RequestMethod.GET)
