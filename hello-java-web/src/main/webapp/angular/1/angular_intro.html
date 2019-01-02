@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Intro</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.js"></script>
+</head>
+<body>
+	<div ng-app="" ng-init="name='Kimi';team='McLaren';p1=31;p2=13;json={manu:'bar',rpm:19000};j2={haha:555};ar=[2,4,8,16,32];ar2=[[3,51],[6,77],[91,12]]">
+		The name is <h1 ng-bind="name"></h1>
+		<h3 ng-bind="name"></h3>
+		<input type="text" ng-model="pw"><hr>
+		<p ng-bind="pw"></p>
+		<hr>
+		<p>Angular Expression: 5*6={{5*6}}</p>
+		<p>Angular Expression: 5+6={{5+6}}</p>
+		<p>Angular Expression: 5/6={{5/6}}</p>
+		<p>Angular Expression: 5-6={{5-6}}</p>
+		<p>Angular Expression: 5?6={{'roman r'}}</p>
+		<p>Angular Expression: 5?6={{"john"}}</p>
+		<p>Angular Expression: 5?6={{name}}</p>
+		<p>Angular Expression: 5?6={{team}}</p>
+		<p>Angular Expression: p1+p2={{p1+p2}}</p>
+		<p>Angular Expression: 1/0={{1/0}}</p>
+		<p>Angular Expression: 7%3={{7%3}}</p>
+		<p>Angular Expression: json={{json}}</p>		
+		<p>Angular Expression: json.manu={{json.manu}}</p>		
+		<p>Angular Expression: jsonPlus={{json.rpm+j2.haha}}</p>		
+		<p>Angular Expression: ar={{ar}}</p>		
+		<p>Angular Expression: ar={{ar[2]}}</p>		
+		<p>Angular Expression: ar2={{ar2[2][0]}}</p>		
+<!-- 		<p>Angular Expression: 5++={{5++}}</p> -->
+<!-- 		<p>Angular Expression: 5++={{"5+6"}}</p> -->
+	</div>
+	<hr>
+	<div ng-app="">
+		<input type="text" ng-model="dd">
+		<hr>
+		<h1 ng-bind="dd"></h1>
+	</div>
+	<hr>
+	<div ng-app="" ng-init="name='Ralf'">
+		<h1>{{name}}</h1>
+	</div>
+</body>
+</html>
