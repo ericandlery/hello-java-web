@@ -16,6 +16,8 @@
 		<h6>Valid: {{form.in.$valid}}</h6>
 		<h6>Dirty: {{form.in.$dirty}}</h6>
 		<h6>Touched: {{form.in.$touched}}</h6>
+		<hr>
+		<h3 ng-show="form.in.$valid">Valid</h3>
 	</form>
 </body>
 </html>
