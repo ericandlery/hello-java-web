@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Filter 3</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.js"></script>
+<script type="text/javascript">
+	var ap=angular.module('a',[]).controller('x',function($scope){
+		$scope.ki=['kimi','ralf','david','mika','juan','jenson'];
+	});
+</script>
+</head>
+<body ng-app="a" ng-controller="x">
+	<div>
+		<textarea rows="3" cols="15" ng-model="name"></textarea>
+		<hr>
+		<p>{{name|uppercase}}</p>
+	</div>
+	<hr>
+	<select>
+		<option ng-repeat="i in ki|filter:name">{{i|uppercase}}</option>
+	</select>
+</body>
+</html>

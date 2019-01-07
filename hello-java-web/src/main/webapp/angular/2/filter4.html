@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Filter 4</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.js"></script>
+<script type="text/javascript">
+	var ap=angular.module('ap',[]).controller('con',function($scope){
+		$scope.test='kimi';
+		$scope.list=[{name:'Kimi',team:'McLaren'},
+			         {name:'Ralf',team:'Williams'},
+			         {name:'Mika',team:'McLaren'},
+			         {name:'Juan',team:'Williams'},
+			         {name:'Jenson',team:'BAR'},
+			         {name:'Sato',team:'Jordan'},
+			         {name:'Alan',team:'Toyota'}];
+	});
+</script>
+</head>
+<body ng-app="ap" ng-controller="con">
+	<div>
+		<table border="1" width="20%">
+			<thead>
+				<tr ng-repeat="(k,v) in list">
+					<th>{{k}}</th>
+					<th>{{v}}</th>
+				</tr>
+			</thead>
+			<tr ng-repeat="l in list">
+				<td>{{l.name}}</td>
+				<td>{{l.team}}</td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>

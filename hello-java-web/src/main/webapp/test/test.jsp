@@ -11,5 +11,6 @@
 	<hr>
 	<p>${date}</p>
 	<a href="/hello-java-web/test/test.html">HOME</a>
+	<a href="testError.do">Test Error Handling</a>
 </body>
 </html>

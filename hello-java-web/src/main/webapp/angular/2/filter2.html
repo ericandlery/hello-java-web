@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Filter2</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.js"></script>
+<script type="text/javascript">
+	var ap=angular.module('ap',[]).controller('con',function($scope){
+		$scope.name='kimi';
+		$scope.team=['bar','dhl','shock','jc','paul','walton'];
+		$scope.price=555;
+		$scope.map=[{lo:'New York',po:726312},{lo:'Chicago',po:9128},{lo:'Great Britain',po:163223}];
+	});
+</script>
+</head>
+<body ng-app="ap">
+	<div ng-controller="con">
+		<p>{{name|uppercase}}</p>
+		<p>{{team|uppercase}}</p>
+		<p>{{team[4]|uppercase}}</p>
+		<hr>
+		<ol ng-repeat="t in team">
+			<li>{{t|uppercase}}</li>
+		</ol>
+		<hr>
+		<!-- Why? -->
+		<select ng-repeat="x in team">
+			<option ng-bind="x|uppercase"></option>
+		</select>
+		<hr>
+		<select>
+			<option ng-repeat="x in team|filter:'b'">Team: {{x|uppercase}}</option>
+		</select>
+		<br>
+		<select>
+			<option ng-repeat="x in team">{{x|orderBy:"x"}}</option>
+		</select>
+		<hr>
+		<p>Price: {{price|currency}}</p>
+		<hr>
+		<ol>
+			<li ng-repeat="m in map|filter:9" ng-bind="m.lo+' '+m.po|uppercase|lowercase"></li>
+		</ol>
+	</div>
+</body>
+</html>
