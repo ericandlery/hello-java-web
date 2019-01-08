@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Service 1</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.js"></script>
+<script type="text/javascript">
+	var ap=angular.module('ap',[]).controller('co',function($scope,$location,$timeout,$interval,$http){
+		$scope.xxx='Kimi';
+		$scope.l=$location.absUrl();
+		console.log($location);
+		console.log($scope);
+		$scope.host=$location.host();
+// 		console.log($http);
+// 		console.log($timeout);
+
+		$timeout(function(){
+// 			alert('timeout');
+			$scope.date=new Date();
+			console.log($scope.date.getFullYear());
+		},1);
+		
+		var aa=$timeout(function(){
+// 			alert('func time');
+		},1000);
+		
+		console.log(aa);
+		
+		$interval(function(){
+			$scope.sec=new Date();
+		},1000);
+		
+		$http.get("testAng.do?action=1");
+		$http.post("testAng.do");
+		
+		$scope.but1=function(){
+// 			alert('ang button');
+			$http.get("testAng.do").then(function(resp){
+// 				alert();
+				console.log(resp);
+				$scope.servlet=resp.data;
+			});
+		}
+		
+	});
+</script>
+</head>
+<body ng-app="ap" ng-controller="co">
+	<h1>{{xxx}}</h1>
+	<h3>{{l}}</h3>
+	<h6>Host: {{host}}</h6>
+	<hr>
+	<h3>{{date.getFullYear()+' / '+(date.getMonth()+1)+' / '+date.getDate()}}</h3>
+	<hr>
+	<h4>{{sec.getMinutes()+' / '+sec.getSeconds()+' / '+sec.getMilliseconds()}}</h4>
+	<hr>
+	<button ng-click="but1()">AngularJS</button>
+	<input type="text" ng-model="servlet">
+	<div>{{servlet|uppercase}}</div>
+</body>
+</html>

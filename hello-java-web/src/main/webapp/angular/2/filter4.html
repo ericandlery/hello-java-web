@@ -6,14 +6,29 @@
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.js"></script>
 <script type="text/javascript">
 	var ap=angular.module('ap',[]).controller('con',function($scope){
+		
+		var i=-1;
+		
 		$scope.test='kimi';
-		$scope.list=[{name:'Kimi',team:'McLaren'},
-			         {name:'Ralf',team:'Williams'},
-			         {name:'Mika',team:'McLaren'},
-			         {name:'Juan',team:'Williams'},
-			         {name:'Jenson',team:'BAR'},
-			         {name:'Sato',team:'Jordan'},
-			         {name:'Alan',team:'Toyota'}];
+		$scope.list=[{'name':'Kimi','team':'McLaren'},
+			         {'name':'Ralf','team':'Williams'},
+			         {'name':'Mika','team':'McLaren'},
+			         {'name':'Juan','team':'Williams'},
+			         {'name':'Jenson','team':'BAR'},
+			         {'name':'Sato','team':'Jordan'},
+			         {'name':'Alan','team':'Toyota'}];
+		
+		$scope.myOrderBy=function(x,obj){
+			i*=-1;
+			
+			if(i==1){
+				x=x;
+			}else{
+				x='-'+x;
+			}
+			
+			$scope.order=x;
+		};
 	});
 </script>
 </head>
@@ -21,14 +36,18 @@
 	<div>
 		<table border="1" width="20%">
 			<thead>
-				<tr ng-repeat="(k,v) in list">
-					<th>{{k}}</th>
-					<th>{{v}}</th>
+				<tr>
+					<!-- Don't work -->
+<!-- 					<th>{{k}}</th> -->
+<!-- 					<th>{{v}}</th> -->
+					<th ng-click="myOrderBy('name',this)">{{"name"|uppercase}}</th>
+					<th ng-click="myOrderBy('team',this)">{{"team"|uppercase}}</th>
 				</tr>
 			</thead>
-			<tr ng-repeat="l in list">
-				<td>{{l.name}}</td>
-				<td>{{l.team}}</td>
+			<tr ng-repeat="(k,v) in list|orderBy:order">
+				<td>{{v.name}}</td>
+				<td>{{v.team}}</td>
+				<td>{{k}}</td>
 			</tr>
 		</table>
 	</div>

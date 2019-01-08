@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>$http 1</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.js"></script>
+<script type="text/javascript">
+	var ap=angular.module('ap',[]).controller('co',function($scope,$http){
+		$scope.ki='Kimi';
+		
+		$scope.serv=function(){
+			console.log('555');
+			$http({method:'POST',url:'testAng.do'}).then(function mysuc(resp){
+// 				alert(resp);
+				$scope.post=resp.data;
+			});
+		}
+	});
+</script>
+</head>
+<body ng-app="ap" ng-controller="co">
+	<h1>{{ki}}</h1>
+	<input type="button" value="Sync" ng-click="serv()">
+	<h1>{{post}}</h1>
+</body>
+</html>
