@@ -8,19 +8,26 @@
 	var ap=angular.module('ap',[]).controller('co',function($scope,$http){
 		$scope.ki='Kimi';
 		
-		$scope.serv=function(){
-			console.log('555');
-			$http({method:'POST',url:'testAng.do'}).then(function mysuc(resp){
+		$scope.serv=function(x){
+			console.log('x='+x);
+			console.log(x);
+			
+// 			console.log('555');
+			
+			$http({method:'POST',url:'testAng.do'}).then(function(resp){
 // 				alert(resp);
 				$scope.post=resp.data;
+			},function(resp){
+				alert('ERROR!!!');
 			});
+			
 		}
 	});
 </script>
 </head>
 <body ng-app="ap" ng-controller="co">
 	<h1>{{ki}}</h1>
-	<input type="button" value="Sync" ng-click="serv()">
+	<input type="button" value="Sync" ng-click="serv(this)">
 	<h1>{{post}}</h1>
 </body>
 </html>

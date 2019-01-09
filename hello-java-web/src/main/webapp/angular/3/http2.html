@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>$http 2 JSON</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.js"></script>
+<script type="text/javascript">
+	var ap=angular.module('ap',[]).controller('co',function($scope,$http){
+		$scope.serv=function(){
+			$http({method:'GET',url:'json.do'}).then(function(resp){
+				$scope.post=resp.data;
+				
+				var a=document.getElementById('1');
+				console.log(a);
+			});
+		};
+	});
+	
+	console.log(555);
+	
+	var i=666;
+	
+	console.log(i);
+	
+</script>
+</head>
+<body ng-app="ap" ng-controller="co">
+	<input type="button" value="json" ng-click="serv()">
+	<h1>{{post}}</h1>
+	<hr>
+	<select>
+		<option id="{{$index+1}}" ng-repeat="i in post">{{$index+" "+i}}</option>
+	</select>
+	<hr>
+	<select ng-model="kk" ng-options="i for i in post">
+	</select>{{kk}}
+</body>
+</html>
