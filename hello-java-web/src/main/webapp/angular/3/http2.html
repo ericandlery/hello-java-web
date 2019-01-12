@@ -14,6 +14,13 @@
 				console.log(a);
 			});
 		};
+		
+		$scope.json=function(){
+			$http({method:"GET",url:"json2.do"}).then(function(resp){
+				console.log(resp.data);
+				$scope.ops=resp.data;
+			});
+		};
 	});
 	
 	console.log(555);
@@ -34,5 +41,10 @@
 	<hr>
 	<select ng-model="kk" ng-options="i for i in post">
 	</select>{{kk}}
+	<hr>
+	<h1>ng-options</h1>
+	<input type="button" value="json2" ng-click="json()">
+	<select ng-model="mops" ng-options="o.name for o in ops"></select>
+	<h1>JSON2:{{mops.name}} || {{mops.team}}</h1>
 </body>
 </html>
