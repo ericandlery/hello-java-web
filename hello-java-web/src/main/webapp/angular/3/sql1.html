@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>SQL 1</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.js"></script>
+<script type="text/javascript">
+	var ap=angular.module('ap',[]).controller('co',function($scope,$http){
+		$scope.title='AngularJS SQL';
+		$scope.ck=function(){
+			/*Both lines work.*/
+// 			$http.defaults.headers.post["Content-Type"] = "application/x-www-form-urlencoded";
+			$http.post("getSql1.do","test=ajs",{headers:{'Content-Type':'application/x-www-form-urlencoded'}}).then(function(resp){
+				console.log(resp.data.myArrayList[0].map.name);
+				$scope.table=resp.data.myArrayList;
+			});
+		};
+	});
+</script>
+</head>
+<body ng-app="ap" ng-controller="co">
+	<h1>{{title}}</h1>
+	<button ng-click="ck()">SQL Test</button>
+	<hr>
+	<table border="2">
+		<tr ng-repeat="t in table">
+			<td>{{t.map.name}}</td>
+			<td>{{t.map.id}}</td>
+			<td>{{t.map.make}}</td>
+			<td>{{t.map.price}}</td>
+			<td>{{t.map.expire}}</td>
+		</tr>
+	</table>
+</body>
+</html>

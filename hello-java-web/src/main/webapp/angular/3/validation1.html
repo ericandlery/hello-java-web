@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Dom 1</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.js"></script>
+<script type="text/javascript">
+	var ap=angular.module('ap',[]).controller('co',function($scope){
+		$scope.title='Validation 1';
+		console.log(form.name);
+	});
+</script>
+</head>
+<body ng-app="ap" ng-controller="co">
+	<h1>{{title}}</h1>
+	<form name="form">
+		name: <input type="text" ng-model="name" name="name" required>
+		<input type="submit" value="Submit">
+		Validated? <span>{{form.name.$valid}}</span>
+	</form>
+</body>
+</html>

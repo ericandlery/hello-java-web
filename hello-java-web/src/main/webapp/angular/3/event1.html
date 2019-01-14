@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Dom 1</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.js"></script>
+<script type="text/javascript">
+	var mov=0;
+
+	var ap=angular.module('ap',[]).controller('co',function($scope){
+		$scope.b=true;
+		
+		$scope.title='Event 1';
+		$scope.move=function(){
+			$scope.mov=++mov;
+		};
+		$scope.ck=function(){
+			$scope.b=!$scope.b;
+		};
+		$scope.ch=function(e){
+			console.log(e);
+			console.log(e.target.checked);
+		};
+	});
+</script>
+</head>
+<body ng-app="ap" ng-controller="co">
+	<h1 ng-mousemove="move()" style="display: inline-block;">{{title}}</h1>
+	<p>{{mov}}</p>
+	<hr>
+	<p ng-click="ck()">Toggle</p>
+	CheckBox: <input type="checkbox" ng-click="ch($event)">
+	<table border="5" ng-show="b">
+		<thead>
+			<tr>
+				<td>Name</td>
+				<td>Team</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Kimi</td>
+				<td>McLaren</td>
+			</tr>
+			<tr>
+				<td>Ralf</td>
+				<td>Williams</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

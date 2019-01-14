@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Dom 1</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.js"></script>
+<script type="text/javascript">
+	var ap=angular.module('ap',[]).controller('co',function($scope){
+		$scope.title='Dom 1';
+	});
+</script>
+</head>
+<body ng-app="ap" ng-controller="co">
+	<h1>{{title}}</h1>
+	Disable? <input type="checkbox" ng-model="check">
+	<button ng-disabled="check">DISABLED</button>
+	<span>{{check}}</span><span ng-show="check">{{title}}</span>
+	<hr>
+	<input type="number" ng-model="show"><span ng-show="show*7>35">Watch Me</span><span ng-hide="show-30<=0">Hide Me</span>
+</body>
+</html>
