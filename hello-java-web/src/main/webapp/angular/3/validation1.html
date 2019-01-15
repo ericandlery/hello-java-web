@@ -3,11 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <title>Dom 1</title>
+<style type="text/css">
+	input.ng-touched{background-color: aqua;}
+	input.ng-valid{background-color: green;}
+/* 	input.ng-invalid{background-color: red;} */
+</style>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.js"></script>
 <script type="text/javascript">
 	var ap=angular.module('ap',[]).controller('co',function($scope){
 		$scope.title='Validation 1';
 		console.log(form.name);
+		
+		$scope.css=function(e){
+			console.log(e.target);
+		};
 	});
 </script>
 </head>
@@ -17,6 +26,11 @@
 		name: <input type="text" ng-model="name" name="name" required>
 		<input type="submit" value="Submit">
 		Validated? <span>{{form.name.$valid}}</span>
+	</form>
+	<hr>
+	<form>
+		<input type="text" ng-model="csst" required="required">
+		<input type="button" value="css test" ng-click="css($event)" id="css">
 	</form>
 </body>
 </html>

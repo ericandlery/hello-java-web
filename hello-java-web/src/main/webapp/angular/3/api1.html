@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>API 1</title>
+<!-- Not working in the latest version for some unknown reasons, maybe deprecated? -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script type="text/javascript">
+	var ap=angular.module('ap',[]).controller('co',function($scope){
+		$scope.title='API 1';
+		$scope.rr='roman';
+		$scope.uu=angular.uppercase($scope.rr);
+		console.log($scope.uu);
+		console.log(angular.lowercase($scope.uu));
+	});
+</script>
+</head>
+<body ng-app="ap" ng-controller="co">
+	<h1>{{title}}</h1>
+</body>
+</html>
