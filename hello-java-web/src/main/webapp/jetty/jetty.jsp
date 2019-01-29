@@ -8,7 +8,7 @@
 <title>Jetty JSP Page</title>
 </head>
 <body>
-	<h1>Jetty JSP Page</h1>
+	<h1>Jetty JSP Page 3</h1>
 	<p><%=new java.util.Date()%></p>
 	<c:out value="JSP Succeeds"></c:out>
 	<a href="jetty.do">Jetty Servlet</a>
