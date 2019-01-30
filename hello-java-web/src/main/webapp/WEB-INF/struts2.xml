@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+
+	<package name="room">
+	
+		<action name="home">
+			<result>/struts2/login.jsp</result>
+		</action>
+		
+		<action name="/struts2/login" class="controller.action.TestStruts2">
+			<result name="err">/struts2/err.jsp</result>
+			<result name="valid">/struts2/valid.jsp</result>
+		</action>
+		
+	</package>
+
+</struts>
