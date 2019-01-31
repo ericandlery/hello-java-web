@@ -12,7 +12,7 @@ public class TestStruts2 implements Action{
 		
 		System.out.println("form="+toString());
 		
-		if("".equals(getName()) || "".equals(getNum())) {
+		if("".equals(getName()) || null==getNum()) {
 			return "err";
 		}else {
 			return "valid";

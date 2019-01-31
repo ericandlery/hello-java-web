@@ -4,12 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Login Validated</title>
+<title>Insert title here</title>
 </head>
 <body>
-	<h1>Validated!</h1>
-	<p>Your name is ${name}</p>
-	<p>And your room is ${num}</p>
-	<a href="/hello-java-web/struts2/login.jsp">home</a>
+	<h1>Home</h1>
 </body>
 </html>
