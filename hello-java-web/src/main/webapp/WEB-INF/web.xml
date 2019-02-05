@@ -9,8 +9,9 @@
 		<filter-name>struts2</filter-name>
 		<filter-class>org.apache.struts2.dispatcher.filter.StrutsPrepareAndExecuteFilter</filter-class>
 		<init-param>
+			<!-- Package name Only "struts", "struts2", "action" or "actions" work, that's the way struts 2 is. -->
 			<param-name>actionPackages</param-name>
-			<param-value>controller.action.annotation</param-value>
+			<param-value>controller.action.annotation.actions</param-value>
 		</init-param>
 	</filter>
 	<filter-mapping>

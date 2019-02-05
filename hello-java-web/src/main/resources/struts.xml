@@ -6,14 +6,14 @@
 
 	<package name="room" extends="struts-default">
 	
-		<action name="home">
-			<result>/struts2/login.jsp</result>
-		</action>
+<!-- 		<action name="home"> -->
+<!-- 			<result>/struts2/login.jsp</result> -->
+<!-- 		</action> -->
 		
-		<action name="login" class="controller.action.TestStruts2">
-			<result name="err">/struts2/err.jsp</result>
-			<result name="valid">/struts2/valid.jsp</result>
-		</action>
+<!-- 		<action name="login" class="controller.action.TestStruts2"> -->
+<!-- 			<result name="err">/struts2/err.jsp</result> -->
+<!-- 			<result name="valid">/struts2/valid.jsp</result> -->
+<!-- 		</action> -->
 		
 	</package>
 
