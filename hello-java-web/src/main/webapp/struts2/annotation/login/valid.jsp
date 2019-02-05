@@ -8,5 +8,8 @@
 </head>
 <body>
 	<h1>Validated!</h1>
+	<p>Name is ${name}</p>
+	<p>Number is ${num}</p>
+	<a href="/hello-java-web/struts2/annotation/login.jsp">login</a>
 </body>
 </html>
