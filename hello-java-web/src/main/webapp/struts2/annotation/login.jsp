@@ -18,6 +18,7 @@
 				console.log('ajax');
 				console.log(xhr.responseText);
 				console.log(xhr.response);
+				location.replace('sign');
 			}
 		}
 		xhr.open('GET','clearSession',true);
@@ -36,7 +37,7 @@
 		<input type="submit" value="ok">
 	</form>
 	<br>
-	<c:if test="${1==1}">
+	<c:if test="${login}">
 		<button id="cs" onclick="clearSession()">Clear Session</button>
 	</c:if>
 </body>
