@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script type="text/javascript">
-	console.log('kimi');
+// 	console.log('kimi');
 	
 	function clearSession(){
 // 		console.log('ralf');
@@ -16,10 +16,11 @@
 		xhr.onreadystatechange=function(){
 			if(this.readyState==4 && this.status==200){
 				console.log('ajax');
-				console.log(xhr);
+				console.log(xhr.responseText);
+				console.log(xhr.response);
 			}
 		}
-		xhr.open('GET','aj',true);
+		xhr.open('GET','clearSession',true);
 		xhr.send();
 	}
 </script>
